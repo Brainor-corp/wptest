@@ -1,0 +1,31 @@
+.br-tools {
+    width: 100%;
+}
+
+.br-tools label {
+    font-size: 0.7rem;
+}
+
+.br-tools label,
+.br-tools input[type=radio] {
+    cursor: pointer;
+}
+
+.br-tools .br-marks,
+.br-tools .br-models {
+    columns: auto 4;
+    /*max-height: 400px;*/
+    overflow-y: scroll;
+}
+
+.br-tools .br-products .br-wrapper {
+    padding: 10px;
+    border: 2px solid #fad028;
+    border-radius: 5px;
+}
+
+.br-tools .br-products .br-wrapper .br-good-row {
+    margin-bottom: 10px;
+    padding: 10px;
+    border-bottom: 3px solid #fad028;
+}
