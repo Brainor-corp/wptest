@@ -69,6 +69,60 @@ add_action('wp_ajax_nopriv_br_tools_get_car_models', 'br_tools_get_car_models');
 
 
 /**
+ * @param $goods
+ * Строит HTML вывод списка подобранных товаров
+ * @return string
+ */
+function showProducts($goods) {
+    $returnElements = '<div class="br-wrapper">';
+
+    foreach ($goods as $good):
+        $returnElements .= '
+            <div class="br-good-row">
+                <div>
+                    <span class="br-good-name">' . $good->art . '</span>
+                </div>
+                <div>
+                    <span>' . $good->name . '</span>
+                </div>
+                <div>
+                    <span> Производитель: ' . $good->brand . '</span>
+                </div>
+                <div>
+                    <span> Доступно: ' . $good->quant . ' шт.</span>
+                </div>
+                <div>
+                    <span> Город: ' . get_city_name($good->city) . '</span>
+                </div>
+                <div>
+                    <span> Цена: ' . $good->price . ' руб. </span>
+                </div>
+            </div>
+        ';
+    endforeach;
+
+    $returnElements .= '</div>';
+
+    return $returnElements;
+}
+
+/**
+ * @param $code
+ * Возвращает русское представление названия города по его коду
+ * @return string
+ */
+function get_city_name($code) {
+    $name = $code;
+
+    switch ($code) {
+        case 'msk': $name = 'Москва'; break;
+        case 'spb': $name = 'Санкт Петербург'; break;
+    }
+
+    return $name;
+}
+
+/**
  * Получение продуктов
  */
 function br_tools_get_products() {
@@ -90,7 +144,7 @@ function br_tools_get_products() {
     $goodsTable = 'goods';
     $goodsIdsStr = implode(',', $goodsIdsArray);
     $query = $wpdb->prepare(
-        "SELECT * FROM `$goodsTable` WHERE `$goodsTable`.`id` IN ($goodsIdsStr)",
+        "SELECT * FROM $goodsTable WHERE $goodsTable.id IN ($goodsIdsStr)",
         null
     );
     $goods = $wpdb->get_results($query, OBJECT);
@@ -100,31 +154,7 @@ function br_tools_get_products() {
         wp_die();
     }
 
-    $returnElements = '<div class="br-wrapper">';
-
-    foreach ($goods as $good):
-        $returnElements .= '
-            <div class="br-good-row">
-                <div>
-                    <span class="br-good-name">' . $good->art . '</span>
-                </div>
-                <div>
-                    <span>' . $good->name . '</span>
-                </div>
-                <div>
-                    <span> Производитель: ' . $good->brand . '</span>
-                </div>
-                <div>
-                    <span> Доступно: ' . $good->quant . ' шт.</span>
-                </div>
-                <div>
-                    <span> Цена: ' . $good->price . ' руб. </span>
-                </div>
-            </div>
-        ';
-    endforeach;
-
-    $returnElements .= '</div>';
+    $returnElements = showProducts($goods);
 
     echo $returnElements;
     wp_die();
@@ -132,3 +162,37 @@ function br_tools_get_products() {
 
 add_action('wp_ajax_br_tools_get_products', 'br_tools_get_products');
 add_action('wp_ajax_nopriv_br_tools_get_products', 'br_tools_get_products');
+
+/**
+ * Поиск продуктов по коду или названию
+ */
+function br_tools_search_products() {
+    global $wpdb;
+
+    parse_str($_POST['params'], $params);
+
+    $goodsTable = 'goods';
+    $query = $wpdb->prepare(
+        "SELECT * FROM $goodsTable WHERE ($goodsTable.art = %s OR $goodsTable.orgnl_id LIKE %s OR $goodsTable.cross LIKE %s OR $goodsTable.name LIKE %s)",
+        [
+            $params['code'],
+            '% ; ' . $wpdb->esc_like($params['code']) . '%',
+            '% ; ' . $wpdb->esc_like($params['code']) . '%',
+            '% ; ' . $wpdb->esc_like($params['name'] . '%')
+        ]
+    );
+    $goods = $wpdb->get_results($query, OBJECT);
+
+//    if(!count($goods)) {
+//        echo 'Товары не найдены';
+//        wp_die();
+//    }
+
+    $returnElements = showProducts($goods);
+
+    echo $returnElements;
+    wp_die();
+}
+
+add_action('wp_ajax_br_tools_search_products', 'br_tools_search_products');
+add_action('wp_ajax_nopriv_br_tools_search_products', 'br_tools_search_products');

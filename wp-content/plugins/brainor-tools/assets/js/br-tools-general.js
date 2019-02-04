@@ -69,5 +69,37 @@ $(document).ready(function () {
                 console.log(error2);
             }
         });
+    });
+
+    $(document).on('submit', '#br-search-form', function (e) {
+        e.preventDefault();
+
+        let form = $(this);
+
+        $.ajax({
+            type: 'POST',
+            url: $('.br-tools input[name="br-wp-admin-ajax-url"]').val(),
+            data: {
+                action: 'br_tools_search_products',
+                params: form.serialize()
+            },
+            dataType: 'html',
+            beforeSend: function() {
+                $('.br-tools-input').attr('disabled', true);
+            },
+            success: function(data){
+                $(".br-tools .br-products").hide(200, function() {
+                    $(this).html(data).show(200);
+                });
+                $('.br-tools-input').attr('disabled', false);
+            },
+            error: function (data, error, error2) {
+                $('.br-tools-input').attr('disabled', false);
+                console.log('error');
+                console.log(data);
+                console.log(error);
+                console.log(error2);
+            }
+        });
     })
 });

@@ -41,18 +41,38 @@
 <div class="br-tools">
     <input type="hidden" name="br-wp-admin-ajax-url" value="<?php echo admin_url('admin-ajax.php'); ?>">
 
-    <!--  Список марок авто -->
-    <div class="br-marks">
-        <?php foreach ($cars as $key => $car): ?>
-            <div class="mark-point">
-                <input type="radio" class="br-mark-radio br-tools-input" value="<?php echo $car->brand ?>" id="br-mark-<?php echo $key ?>" name="br-mark">
-                <label for="br-mark-<?php echo $key ?>"><?php echo $car->brand ?></label>
-            </div>
-        <?php endforeach; ?>
+    <!--    Поиск по коду или названию    -->
+    <div class="br-tab">
+        <div class="br-search-block">
+            <form action="" id="br-search-form">
+                <div class="br-form-group">
+                    <label for="br-search-name">Название</label>
+                    <input type="text" class="br-tools-input" id="br-search-name" name="name">
+                </div>
+                <div class="br-form-group">
+                    <label for="br-search-code">Код</label>
+                    <input type="text" class="br-tools-input" id="br-search-code" name="code">
+                </div>
+                <button type="submit">Показать</button>
+            </form>
+        </div>
     </div>
 
-    <!--  Список моделей авто (подгружается аяксом при выборе марки) -->
-    <div class="br-models"></div>
+    <!--    Подбор по параметрам    -->
+    <div class="br-tab">
+        <!--  Список марок авто -->
+        <div class="br-marks">
+            <?php foreach ($cars as $key => $car): ?>
+                <div class="mark-point">
+                    <input type="radio" class="br-mark-radio br-tools-input" value="<?php echo $car->brand ?>" id="br-mark-<?php echo $key ?>" name="br-mark">
+                    <label for="br-mark-<?php echo $key ?>"><?php echo $car->brand ?></label>
+                </div>
+            <?php endforeach; ?>
+        </div>
+
+        <!--  Список моделей авто (подгружается аяксом при выборе марки) -->
+        <div class="br-models"></div>
+    </div>
 
     <!--  Список подобранных комплектаций (подгружается аяксом при моделей) -->
     <div class="br-products"></div>
