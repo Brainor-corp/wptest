@@ -49,16 +49,18 @@ function br_tools_get_car_models() {
     );
 
     $models = $wpdb->get_results($query, OBJECT);
-    $returnElements = '';
+    $returnElements = '<div class="row">';
 
     foreach ($models as $key => $model):
         $returnElements .= '
-            <div class="br-model-point"> 
+            <div class="br-model-point col-xs-12 col-sm-6 col-lg-3 br-tools-mb-5"> 
                 <input type="checkbox" value="' . $model->id . '" id="br-model-' . $key . '" name="br-model" class="br-model-checkbox br-tools-input">
                 <label for="br-model-' . $key . '">' . $model->model . ' (' . $model->modification . ')</label>
             </div>
         ';
     endforeach;
+
+    $returnElements .= '</div>';
 
     echo $returnElements;
     wp_die();
@@ -78,24 +80,32 @@ function showProducts($goods) {
 
     foreach ($goods as $good):
         $returnElements .= '
-            <div class="br-good-row">
-                <div>
-                    <span class="br-good-name">' . $good->art . '</span>
+            <div class="br-good-row row br-tools-mx-0">
+                <div class="col-sm-4 col-xs-12">
+                    <img class="br-tools-img" src="https://via.placeholder.com/400x300" alt="">
                 </div>
-                <div>
-                    <span>' . $good->name . '</span>
-                </div>
-                <div>
-                    <span> Производитель: ' . $good->brand . '</span>
-                </div>
-                <div>
-                    <span> Доступно: ' . $good->quant . ' шт.</span>
-                </div>
-                <div>
-                    <span> Город: ' . get_city_name($good->city) . '</span>
-                </div>
-                <div>
-                    <span> Цена: ' . $good->price . ' руб. </span>
+                <div class="col-sm-8 col-xs-12">
+                    <div>
+                        <span class="br-good-name"><strong>' . $good->art . '</strong></span>
+                    </div>
+                    <div>
+                        <span><strong>' . $good->name . '</strong></span>
+                    </div>
+                    <div>
+                        <span> Производитель: <strong>' . $good->brand . '</strong></span>
+                    </div>
+                    <div>
+                        <span> Доступно: <strong>' . $good->quant . ' шт.</strong></span>
+                    </div>
+                    <div>
+                        <span> Город: <strong>' . get_city_name($good->city) . '</strong></span>
+                    </div>
+                    <div>
+                        <span> Цена: <strong>' . $good->price . ' руб. </strong> </span>
+                    </div>
+                    <div>
+                        <span> <a data-fancybox="" data-src="#hidden-content" href="javascript:;" class="btn br-tools-modal-btn">Оставить заявку</a> </span>
+                    </div>
                 </div>
             </div>
         ';
@@ -173,12 +183,16 @@ function br_tools_search_products() {
 
     $goodsTable = 'goods';
     $query = $wpdb->prepare(
-        "SELECT * FROM $goodsTable WHERE ($goodsTable.art = %s OR $goodsTable.orgnl_id LIKE %s OR $goodsTable.cross LIKE %s OR $goodsTable.name LIKE %s)",
+        "SELECT * FROM $goodsTable WHERE ($goodsTable.art = %s OR ($goodsTable.orgnl_id LIKE %s OR $goodsTable.orgnl_id LIKE %s OR $goodsTable.orgnl_id LIKE %s) OR ($goodsTable.cross LIKE %s OR $goodsTable.cross LIKE %s OR $goodsTable.cross LIKE %s) OR $goodsTable.name LIKE %s)",
         [
             $params['code'],
             '% ; ' . $wpdb->esc_like($params['code']) . '%',
+            '%' . $wpdb->esc_like($params['code']) . ' ; %',
+            '%' . $wpdb->esc_like($params['code']) . '%',
             '% ; ' . $wpdb->esc_like($params['code']) . '%',
-            '% ; ' . $wpdb->esc_like($params['name'] . '%')
+            '%' . $wpdb->esc_like($params['code']) . ' ; %',
+            '%' . $wpdb->esc_like($params['code']) . '%',
+            '%' . $wpdb->esc_like($params['name'] . '%')
         ]
     );
     $goods = $wpdb->get_results($query, OBJECT);

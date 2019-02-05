@@ -8,6 +8,9 @@ get_header(); ?>
 	<?php get_sidebar(); ?>
 	<div class="cage">
 		<div class="wrapper">
+
+            <?php echo do_shortcode('[br_tools type="single" slug="br-tools"]') ?>
+
 			<h1>Ремонт рулевого управления
 </h1>
 
