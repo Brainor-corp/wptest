@@ -1,0 +1,663 @@
+/*==========  Desktop First Method  ==========*/
+
+/* Large Devices, Wide Screens */
+@media only screen and (max-width: 1600px) {
+    .dex_form {
+        -webkit-background-size: 65% 100%;
+        background-size: 65% 100%;
+    }
+
+    .hole_block {
+        justify-content: center;
+    }
+
+    .hole_block .item {
+        margin-right: 15px;
+    }
+
+    .hole_block .item:last-child {
+        margin-right: 15px;
+    }
+}
+
+@media only screen and (max-width: 1200px) {
+    .third_block a.btn {
+        display: none;
+    }
+
+    .dex_form .dex_form_block form {
+        flex-direction: column;
+    }
+
+    .dex_form .dex_form_block input {
+        margin-right: 0;
+        margin-bottom: 15px;
+    }
+
+    .dex_form {
+        background-size: 55% 100%;
+    }
+
+    .examples {
+        flex-wrap: wrap;
+    }
+
+    .example {
+        margin-bottom: 15px;
+    }
+
+    .otz {
+        flex-wrap: wrap;
+    }
+
+    .hole_ot {
+        margin-bottom: 30px;
+    }
+
+    .left_part {
+        max-width: 400px;
+        width: 100%;
+    }
+
+    .contacts #map img {
+        width: 100%;
+    }
+
+    .three_adresses {
+        margin-left: 40px;
+    }
+
+    .tab-content a.tab_item:last-child {
+        flex: initial;
+    }
+
+    .hole_item_i {
+        justify-content: start;
+    }
+
+    .benefits .item_i:nth-child(4) {
+        margin-right: 30px;
+    }
+
+    .benefits {
+        -webkit-background-size: cover;
+        background-size: cover;
+        padding-top: 40px;
+        padding-bottom: 40px;
+    }
+
+    .contacts .hole_block {
+        flex-wrap: nowrap;
+    }
+
+    .dex_form .dex_form_block {
+        justify-content: center;
+    }
+
+    .big_fon .title h1 {
+        font-size: 60px;
+    }
+}
+
+/* Medium Devices, Desktops */
+@media only screen and (max-width: 992px) {
+    .f_block p {
+        display: none;
+    }
+
+    .s_block a {
+        display: block;
+        margin-top: 5px;
+    }
+
+    .s_block p {
+        margin-top: 40px;
+    }
+
+    .s_block {
+        margin-right: 0;
+        margin-left: 0;
+    }
+
+    .mob_menu {
+        display: flex;
+        justify-content: flex-start;
+    }
+
+    .mob_menu ul {
+        display: none;
+    }
+
+    .mob_menu ul.create {
+        display: block;
+    }
+
+    .menu {
+        display: none;
+    }
+
+    .block_new_form {
+        flex-direction: column;
+    }
+
+    .big_fon .title h1 {
+        text-align: center;
+    }
+
+    .big_fon .title p {
+        text-align: center;
+    }
+
+    .block_form {
+        margin: auto;
+        margin-top: 30px;
+
+    }
+
+    .hole_item_i {
+        justify-content: space-between;
+    }
+
+    .benefits .item_i {
+        margin-right: 0px !important;
+    }
+
+    .three_adresses {
+        flex-direction: column;
+    }
+
+    .third_section .t_block .s_t_block {
+        justify-content: space-between;
+    }
+
+    .third_section .t_block .s_t_block .item_icon {
+        max-width: 40%;
+        margin-right: 15px !important;
+        margin-left: 15px !important;
+    }
+
+    .no-gutter {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+
+    .benefits h3 {
+        text-align: center;
+    }
+
+    .block_new_form {
+        margin-bottom: 40px;
+    }
+
+    .third_section .inside_t_block_hole {
+        flex-direction: column;
+    }
+
+    .third_section .t_block h2 {
+        text-align: center;
+    }
+
+    .third_section .t_block .f_t_block {
+
+        max-width: 100%;
+        margin-right: 0px;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        margin-bottom: 30px;
+
+    }
+
+    .third_section .show_effects {
+        margin-bottom: 40px;
+    }
+
+    #nav-icon4 span:nth-child(1) {
+        top: 0px;
+        -webkit-transform-origin: left center;
+        -moz-transform-origin: left center;
+        -o-transform-origin: left center;
+        transform-origin: left center;
+    }
+
+    #nav-icon4 span:nth-child(2) {
+        top: 10px;
+        -webkit-transform-origin: left center;
+        -moz-transform-origin: left center;
+        -o-transform-origin: left center;
+        transform-origin: left center;
+    }
+
+    #nav-icon4 {
+        width: 35px;
+        height: 25px;
+        position: relative;
+
+        -webkit-transform: rotate(0deg);
+        -moz-transform: rotate(0deg);
+        -o-transform: rotate(0deg);
+        transform: rotate(0deg);
+        -webkit-transition: .5s ease-in-out;
+        -moz-transition: .5s ease-in-out;
+        -o-transition: .5s ease-in-out;
+        transition: .5s ease-in-out;
+        cursor: pointer;
+    }
+
+    #nav-icon4 span {
+        display: block;
+        position: absolute;
+        height: 5px;
+        width: 100%;
+        background: #d3531a;
+        border-radius: 9px;
+        opacity: 1;
+        left: 0;
+        -webkit-transform: rotate(0deg);
+        -moz-transform: rotate(0deg);
+        -o-transform: rotate(0deg);
+        transform: rotate(0deg);
+        -webkit-transition: .25s ease-in-out;
+        -moz-transition: .25s ease-in-out;
+        -o-transition: .25s ease-in-out;
+        transition: .25s ease-in-out;
+    }
+
+    #nav-icon4 span:nth-child(3) {
+        top: 20px;
+        -webkit-transform-origin: left center;
+        -moz-transform-origin: left center;
+        -o-transform-origin: left center;
+        transform-origin: left center;
+    }
+
+    #nav-icon4.open span:nth-child(1) {
+        -webkit-transform: rotate(45deg);
+        -moz-transform: rotate(45deg);
+        -o-transform: rotate(45deg);
+        transform: rotate(45deg);
+        top: -9px;
+        left: 8px;
+    }
+
+    #nav-icon4.open span:nth-child(2) {
+        width: 0%;
+        opacity: 0;
+    }
+
+    #nav-icon4.open span:nth-child(3) {
+        -webkit-transform: rotate(-45deg);
+        -moz-transform: rotate(-45deg);
+        -o-transform: rotate(-45deg);
+        transform: rotate(-45deg);
+        top: 16px;
+        left: 8px;
+    }
+
+    .mob_menu ul.create {
+        position: absolute;
+        right: 100px;
+    }
+
+    .mob_menu {
+        position: relative;
+        transition-duration: 1s;
+    }
+
+    .mob_menu.add_height {
+        height: 150px;
+    }
+
+    ul.create a {
+        font-family: "Opensans_Regular", serif;
+        font-size: 14px;
+        color: #2c302f;
+        line-height: 20px;
+        text-transform: uppercase;
+    }
+
+}
+
+/* Small Devices, Tablets */
+@media only screen and (max-width: 768px) {
+
+    /*Disable Animation on Mobile Devices*/
+    .animated {
+        /*CSS transitions*/
+        -o-transition-property: none !important;
+        -moz-transition-property: none !important;
+        -ms-transition-property: none !important;
+        -webkit-transition-property: none !important;
+        transition-property: none !important;
+        /*CSS transforms*/
+        -o-transform: none !important;
+        -moz-transform: none !important;
+        -ms-transform: none !important;
+        -webkit-transform: none !important;
+        transform: none !important;
+        /*CSS animations*/
+        -webkit-animation: none !important;
+        -moz-animation: none !important;
+        -o-animation: none !important;
+        -ms-animation: none !important;
+        animation: none !important;
+    }
+
+    .dex_form {
+        padding: 0;
+        background: none;
+        background-color: #fad028;
+    }
+
+    .fon_for_mob {
+        background-image: url(../img/car.png);
+    }
+
+    .dex_form .text_block {
+        text-align: center;
+    }
+
+    .dex_form_block {
+        margin-left: 0 !important;
+        width: 100%;
+    }
+
+    .recover .f_recover, .recover .s_recover {
+        width: 100%;
+    }
+
+    .f_recover {
+        margin-bottom: 50px;
+    }
+
+    .recover .tog_recover {
+        flex-direction: column;
+    }
+
+    .hole_ot {
+        margin: auto;
+        margin-bottom: 30px;
+    }
+
+    #tabs li {
+        display: flex !important;
+        justify-content: center;
+        align-items: center;
+    }
+
+    a:focus {
+        border: none;
+        outline: none;
+    }
+}
+
+@media only screen and (max-width: 650px) {
+   .page-template-services .main_serv .tab-content .item .filter{
+            display: flex;
+    justify-content: center;
+    align-items: center;
+    }
+.wrapper.simple-text img{
+        object-fit: contain;
+            height: 285px;
+}
+.page-template-services .main_serv .tab-content .item,
+    .page-template-services .main_serv .tab-content .item:hover{
+        width: 170px!important;
+        text-align: center;
+    }
+.complited_works .cage{
+    min-height: auto!important;
+}
+    .tab-content .tab_item {
+        width: 50%;
+        text-align: center;
+    }
+
+    .hole_logo {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .s_block a::after {
+        left: 28%;
+
+    }
+
+    .s_block a {
+        text-align: center;
+    }
+
+    .f_block {
+        margin-bottom: 20px;
+    }
+
+    .s_block p {
+        margin-bottom: 20px;
+    }
+
+    .third_block p {
+        margin-right: auto;
+    }
+
+    .one_adress.not_hidden {
+        display: block
+    }
+
+    .one_adress {
+        display: none;
+    }
+
+    .fon_footer .hole_footer {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .three_adresses {
+        margin-left: 0;
+        margin-top: 20px;
+
+        margin-bottom: 20px;
+    }
+
+    .fon_footer .one_adress {
+        text-align: center;
+    }
+
+    .fon_footer .one_adress {
+        margin-right: 0 !important;
+    }
+
+    .fon_footer .button_footer {
+        text-align: center;
+    }
+
+    .benefits .item_i {
+        width: 50%;
+    }
+
+    .item_car {
+        width: 50%;
+    }
+
+    .proud .example {
+        width: 46%;
+    }
+
+    .tab-content a.tab_item:last-child {
+        margin-left: 0;
+    }
+}
+
+/* Extra Small Devices, Phones */
+@media only screen and (max-width: 480px) {
+    
+    .third_section .t_block .f_t_block, .third_section .t_block .s_t_block .item_icon, #generic-tabss ul, #generic-tabs ul {
+        flex-direction: column;
+        align-items: center;
+        display: flex;
+    }
+
+    .third_section .t_block h2, .recover h3, .dif h3, .proud h4, .contacts h3, .dop h4 {
+        font-size: 25px;
+    }
+
+    .item_car, .proud .example {
+        width: 100%;
+        text-align: center;
+    }
+
+    #generic-tabss ul li, #generic-tabs ul li {
+        margin: 10px;
+        width: 80% !important;
+    }
+
+    .benefits .item_i .empty_2 {
+        margin: auto;
+    }
+
+    .dop {
+        margin-bottom: 40px;
+    }
+
+    .s_block {
+        min-width: auto;
+    }
+
+    .third_section p.dex_text {
+        padding: 0;
+        text-align: center;
+    }
+
+    .block_form {
+        width: 100%;
+    }
+
+    .contacts .hole_block {
+        flex-direction: column;
+    }
+
+    .contacts #map img {
+        margin-top: 40px;
+    }
+
+    .item_car.form {
+        width: 100%;
+    }
+
+    .big_fon .ul_listed ul {
+        width: 100%;
+        margin-bottom: 15px;
+    }
+
+    .big_fon .ul_listed {
+        flex-direction: column;
+    }
+
+    .block_form button {
+        margin-top: 0;
+    }
+
+    .block_form {
+        padding: 30px;
+    }
+
+    .mob_menu ul.create {
+        right: 0;
+    }
+}
+
+@media only screen and (max-width: 390px) {
+    #generic-tabs ul li a {
+        font-size: 13px !important;
+    }
+
+    .item_car {
+        width: 80%;
+        margin: auto;
+    }
+
+    .big_fon .title h1 {
+        font-size: 44px;
+        line-height: 50px;
+    }
+
+    .last_icon_pack .l_icon {
+        width: 100%;
+    }
+
+    .big_fon {
+        padding: 0;
+    }
+
+    .third_section .t_block .s_t_block {
+        justify-content: center;
+    }
+
+    .third_section .t_block .s_t_block .item_icon {
+        max-width: 100%;
+    }
+
+    .recover .f_recover .inside_text,
+    .recover .s_recover .inside_text {
+        padding: 0 30px;
+    }
+
+    .recover .s_recover .new_text {
+        flex-direction: column;
+    }
+
+    .recover .f_recover .inside_big_block p,
+    .recover .s_recover .inside_big_block p {
+        font-size: 18px;
+    }
+}
+
+@media only screen and (max-width: 370px) {
+span.main{
+    justify-content: center;
+}
+}
+
+/* Custom, iPhone Retina */
+@media only screen and (max-width: 320px) {
+    .item_car {
+        width: 100%;
+        margin: auto;
+    }
+
+    .contacts #generic-tabss ul li a {
+        font-size: 13px !important;
+    }
+
+    .contacts #generic-tabs ul li a {
+        font-size: 13px !important;
+    }
+}
+
+/*==========  Mobile First Method  ==========*/
+
+/* Custom, iPhone Retina */
+@media only screen and (min-width: 320px) {
+
+}
+
+/* Extra Small Devices, Phones */
+@media only screen and (min-width: 480px) {
+
+}
+
+/* Small Devices, Tablets */
+@media only screen and (min-width: 768px) {
+
+}
+
+/* Medium Devices, Desktops */
+@media only screen and (min-width: 992px) {
+
+}
+
+/* Large Devices, Wide Screens */
+@media only screen and (min-width: 1200px) {
+
+}

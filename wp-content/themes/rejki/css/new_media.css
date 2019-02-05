@@ -1,0 +1,296 @@
+@media screen and (max-width: 1300px) {
+  .form_porm_10_p .wrapper {
+    width: auto;
+    padding-left: 0; } }
+
+@media screen and (max-width: 1200px) {
+  .cage .block_complited_works {
+    padding-left: 20px;
+    width: auto; }
+  .item_works {
+    width: 210px; }
+  .wide_button {
+    width: calc(100% - 20px); }
+  .sidebar .inner_content {
+    width: 250px;
+    padding-right: 20px; }
+  .block_free_consultation {
+    background-image: url("../img/car.png");
+    background-size: cover;
+    background-position-y: 107px; }
+    .block_free_consultation .left_side {
+      text-align: center; }
+    .block_free_consultation br {
+      display: none; }
+    .block_free_consultation .right_side {
+      margin-bottom: 40px; }
+      .block_free_consultation .right_side ul {
+        width: 100%;
+        padding: 0;
+        text-align: center; }
+        .block_free_consultation .right_side ul li {
+          float: none;
+          text-align: left; }
+  .price_list .cage {
+    padding: 0 20px; }
+    .price_list .cage .wrapper {
+      width: 100%; }
+  .fon_menu ul li {
+    padding: 0 10px; }
+    .fon_menu ul li ul {
+      width: 230px; }
+      .fon_menu ul li ul li a {
+        font-size: 12px; }
+  .service .wrapper {
+    width: 100%;
+    padding: 0 15px; }
+  .form_porm_10_p {
+    padding: 44px 15px; }
+  .why_we .item {
+    margin-right: 15px; }
+  .questions h3 {
+    margin-top: 20px;
+    margin-bottom: 30px; }
+  .form_porm_10_p input {
+    margin-right: 2px; }
+  .why_we .item {
+    width: 160px; }
+  .about_company .col-56 {
+    width: 50%; }
+  .about_company .col-44 {
+    width: calc(50% - 33px); }
+  .services .wrapper {
+    width: 100%;
+    padding: 0 15px; }
+  .services .adition_services {
+    margin-bottom: 30px; }
+  .services .hole_ot {
+    width: 290px; } }
+
+@media screen and (max-width: 992px) {
+  .sidebar {
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+    height: 65px; }
+    .sidebar .inner_content {
+      width: 100%;
+      padding: 10px 20px; }
+      .sidebar .inner_content .block_vk {
+        margin-right: 20px;
+        height: 200px;
+        display: inline-block;
+        float: left;
+        width: calc(50% - 10px); }
+      .sidebar .inner_content .block_soc {
+        display: inline-block;
+        width: calc(50% - 10px); }
+      .sidebar .inner_content .repair_any_car {
+        width: calc(50% - 10px);
+        display: inline-block;
+        float: left; }
+        .sidebar .inner_content .repair_any_car .item {
+          margin: 10px;
+          margin-left: 10px; }
+          .sidebar .inner_content .repair_any_car .item.col-2 {
+            margin-left: 10px;
+            margin-right: 10px; }
+      .sidebar .inner_content .services_is_sertificated {
+        display: inline-block; }
+  .nav_sidebar {
+    background-image: url("../img/document_layout_sidebar_left-512.png");
+    width: 40px;
+    height: 45px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    position: absolute;
+    top: 10px;
+    right: 10px; }
+  .cage {
+    width: 100%; }
+    .cage .block_complited_works {
+      padding-left: 0;
+      margin-bottom: 40px;
+      text-align: center; }
+  .see_to_complited_works {
+    height: 100px;
+    margin: auto;
+    background-position-y: -41%; }
+    .see_to_complited_works div {
+      background-color: #fff; }
+    .see_to_complited_works br {
+      display: none; }
+  .price_list .cage {
+    padding: 0 15px; }
+  .fon_menu {
+    padding: 20px 0; }
+    .fon_menu ul li {
+      padding: 0; }
+      .fon_menu ul li:hover, .fon_menu ul li:active, .fon_menu ul li:focus {
+        background-color: transparent; }
+      .fon_menu ul li a {
+        line-height: 24px; }
+      .fon_menu ul li ul {
+        display: inline-block;
+        position: relative;
+        top: 0;
+        left: 0;
+        width: auto; }
+        .fon_menu ul li ul li {
+          padding-top: 0;
+          padding-bottom: 0;
+          line-height: 20px;
+          border-bottom: none; }
+  .mob_menu.add_height {
+    display: inline-block;
+    height: 370px;
+    width: 100%;
+    text-align: right; }
+    .mob_menu.add_height .create {
+      width: 200px;
+      text-align: left; }
+      .mob_menu.add_height .create .create {
+        position: relative;
+        top: 0;
+        display: inline-block;
+        left: 0; }
+  .form_porm_10_p input {
+    margin-right: 18px; }
+  .service .item_works {
+    width: 226px; }
+  .why_we .item {
+    width: 169px; }
+  .services .cage {
+    padding-top: 30px; }
+  .services .proud {
+    display: inline-block;
+    width: 100%; } }
+
+@media screen and (max-width: 768px) {
+  .item_works {
+    width: 225px;
+    text-align: left;
+    margin: 10px; }
+  .block_free_consultation {
+    background-position-y: 110px; }
+    .block_free_consultation .left_side {
+      margin-bottom: 20px; }
+    .block_free_consultation .right_side {
+      margin-top: 20px; }
+      .block_free_consultation .right_side ul li {
+        margin: 0;
+        width: 100%;
+        text-align: center; }
+        .block_free_consultation .right_side ul li div {
+          position: relative;
+          display: inline-block;
+          width: auto; }
+        .block_free_consultation .right_side ul li input, .block_free_consultation .right_side ul li button {
+          margin-bottom: 30px;
+          width: calc(100% - 30px); }
+  .price_list .cage .img_1 {
+    width: calc(100% - 30px);
+    margin: 25px 15px; }
+  .block_2_imgs div {
+    margin-right: 0px;
+    width: 100%;
+    margin-bottom: 30px; }
+  .form_porm_10_p input, .form_porm_10_p button {
+    width: 100%;
+    margin-bottom: 20px;
+    margin-right: 0px; }
+  .rew_block .simple-text {
+    margin-bottom: 80px; }
+  .why_we .item {
+	 width: 210px; }
+  .about_company .col-56 {
+    width: 100%; }
+  .about_company .col-44 {
+    width: 100%;
+    margin-left: 0; }
+    .about_company .col-44 table .range {
+      width: calc(100% - 20px); }
+  .popular_services_block .tab-content {
+    text-align: center; }
+    .popular_services_block .tab-content .item {
+      margin: 20px 10px;
+      width: calc(50% - 30px); } }
+
+@media screen and (max-width: 668px) {
+  .block_free_consultation {
+    background-position-y: 155px; }
+  .price_list .adition_services {
+    background-image: none; } }
+
+@media screen and (max-width: 550px) {
+  .service .item_works {
+    height: auto;
+    width: 100%;
+    margin: 0 0 20px; }
+    .service .item_works .img {
+      height: auto; }
+  .sidebar .inner_content .block_vk {
+    margin-left: 15px;
+    width: calc(100% - 30px); }
+  .sidebar .inner_content .block_soc {
+    text-align: center;
+    width: 100%; }
+  .sidebar .inner_content .repair_any_car {
+    width: 100%;
+    text-align: center; }
+  .price_list table {
+    font-size: 13px; }
+    .price_list table tr:first-child {
+      font-size: 14px; }
+      .price_list table tr:first-child td:first-child {
+        width: 63%;
+        font-size: 14px; }
+    .price_list table tr td:nth-child(2), .price_list table tr td:nth-child(3) {
+      font-size: 14px; } }
+
+@media screen and (max-width: 500px) {
+  .item_works {
+    width: 280px; }
+  .wide_button {
+    margin-top: 40px;
+    width: 280px; } 
+
+.img-o-companii {
+	width: 100%;
+	height: 100%;
+	margin:0 0 20px 0;}
+}
+
+@media screen and (max-width: 480px) {
+  .services .cage .main_serv .item {
+    display: inline-block;
+    width: 90%;
+    margin-left: 5%;
+    margin-right: 0; } 
+
+
+
+}
+
+@media screen and (max-width: 380px) {
+  .block_free_consultation {
+    background-image: none; }
+    .block_free_consultation .right_side {
+      margin-top: 0;
+      margin-bottom: 0px;
+      padding-top: 20px;
+      background-position-x: 63%;
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-image: url(../img/car.png); }
+  .block_2_imgs div {
+    padding: 30px 21px; }
+  .popular_services_block .tab-content .item {
+    width: calc(100% - 30px);
+    margin: 20px 15px; } }
+
+@media screen and (min-width: 992px) {
+  .sidebar {
+    height: auto !important; }
+  .nav_sidebar {
+    display: none; } }
