@@ -1,0 +1,46 @@
+@font-face {
+    font-family: "RobotoRegular";
+    font-style: normal;
+    font-weight: normal;
+    src: url("../fonts/RobotoRegular/RobotoRegular.eot?#iefix") format("embedded-opentype"), url("../fonts/RobotoRegular/RobotoRegular.woff") format("woff"), url("../fonts/RobotoRegular/RobotoRegular.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: "Opensans_Bold";
+    src: url("../fonts/OpenSans-Bold.ttf");
+}
+
+@font-face {
+    font-family: "Opensans_Regular";
+    src: url("../fonts/OpenSans-Regular.ttf");
+}
+
+
+@font-face {
+    font-family: "myriad";
+    src: url("../fonts/Myriad_Pro_Regular.ttf");
+}
+@font-face {
+    font-family: "Opensans_Italic";
+    src: url("../fonts/OpenSans-Italic.ttf");
+}
+
+@font-face {
+    font-family: "Opensans_SemiBold";
+    src: url("../fonts/OpenSans-SemiBold.ttf");
+}
+
+@font-face {
+    font-family: "Opensans_Light";
+    src: url("../fonts/OpenSans-Light.ttf");
+}
+
+@font-face {
+    font-family: "B_Bold";
+    src: url("../fonts/BebasNeue_Bold.otf");
+}
+
+@font-face {
+    font-family: "Impact";
+    src: url("../fonts/impact.ttf");
+}
