@@ -82,7 +82,7 @@ function showProducts($goods) {
         $returnElements .= '
             <div class="br-good-row row br-tools-mx-0">
                 <div class="col-sm-4 col-xs-12">
-                    <img class="br-tools-img" src="https://via.placeholder.com/400x300" alt="">
+                    <img class="br-tools-img" src="wp-content/plugins/brainor-tools/assets/imgs/' . $good->art . '.jpg" alt="">
                 </div>
                 <div class="col-sm-8 col-xs-12">
                     <div>
