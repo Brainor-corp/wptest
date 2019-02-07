@@ -73,7 +73,7 @@
 
     <div id="br-tools-search-tab" class="tabcontent">
         <div class="br-search-block">
-            <form action="" id="br-search-form">
+            <form action="" id="br-search-form" class="br-search-form">
                 <div class="br-form-group">
                     <label for="br-search-name">Название</label>
                     <input type="text" class="br-tools-input" id="br-search-name" name="name">
@@ -87,7 +87,7 @@
         </div>
     </div>
     
-    <!--  Список подобранных комплектаций (подгружается аяксом при моделей) -->
+    <!--  Список подобранных комплектаций (подгружается аяксом при выборе моделей) -->
     <div class="br-products row br-tools-mx-0 br-tools-mt-10"></div>
 
     <div style="display: none;" id="br-product-order-modal">

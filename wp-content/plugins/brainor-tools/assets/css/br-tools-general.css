@@ -43,7 +43,7 @@
 
 .br-tools .br-models {
     max-height: 400px;
-    overflow-y: scroll;
+    overflow-y: auto;
 }
 
 .br-tools .br-products .br-wrapper {

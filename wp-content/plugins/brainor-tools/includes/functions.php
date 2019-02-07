@@ -182,25 +182,27 @@ function br_tools_search_products() {
     parse_str($_POST['params'], $params);
 
     $goodsTable = 'goods';
+    $code = empty(trim($params['code'])) ? 'empty_code' : trim($params['code']);
+    $name = empty(trim($params['name'])) ? 'empty_name' : trim($params['name']);
     $query = $wpdb->prepare(
         "SELECT * FROM $goodsTable WHERE ($goodsTable.art = %s OR ($goodsTable.orgnl_id LIKE %s OR $goodsTable.orgnl_id LIKE %s OR $goodsTable.orgnl_id LIKE %s) OR ($goodsTable.cross LIKE %s OR $goodsTable.cross LIKE %s OR $goodsTable.cross LIKE %s) OR $goodsTable.name LIKE %s)",
         [
-            $params['code'],
-            '% ; ' . $wpdb->esc_like($params['code']) . '%',
-            '%' . $wpdb->esc_like($params['code']) . ' ; %',
-            '%' . $wpdb->esc_like($params['code']) . '%',
-            '% ; ' . $wpdb->esc_like($params['code']) . '%',
-            '%' . $wpdb->esc_like($params['code']) . ' ; %',
-            '%' . $wpdb->esc_like($params['code']) . '%',
-            '%' . $wpdb->esc_like($params['name'] . '%')
+            $code,
+            '% ; ' . $wpdb->esc_like($code) . '%',
+            '%' . $wpdb->esc_like($code) . ' ; %',
+            '%' . $wpdb->esc_like($code) . '%',
+            '% ; ' . $wpdb->esc_like($code) . '%',
+            '%' . $wpdb->esc_like($code) . ' ; %',
+            '%' . $wpdb->esc_like($code) . '%',
+            '%' . $wpdb->esc_like($name) . '%'
         ]
     );
     $goods = $wpdb->get_results($query, OBJECT);
 
-//    if(!count($goods)) {
-//        echo 'Товары не найдены';
-//        wp_die();
-//    }
+    if(!count($goods)) {
+        echo 'Товары не найдены';
+        wp_die();
+    }
 
     $returnElements = showProducts($goods);
 

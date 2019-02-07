@@ -1,8 +1,12 @@
 $(document).on('keyup', "input", function (event) {
-    disable_button($(this));
+    if(!$(this).hasClass('br-tools-input')) {
+        disable_button($(this));
+    }
 });
 $(document).on('click', "input", function (event) {
-    disable_button($(this));
+    if(!$(this).hasClass('br-tools-input')) {
+        disable_button($(this));
+    }
 });
 
 function disable_button(dex) {
@@ -50,7 +54,7 @@ function tgtrimm(str) {
 
 $(document).on('submit', "form", function (event) {
     event.preventDefault();
-    var items = $(this).find('input');
+    var items = $(this).find('input:not .br-search-form');
     items.removeClass('error');
     items.removeClass('ok');
     items.each(function (i, item) {
