@@ -21,6 +21,15 @@ register_nav_menus(array(
 
 add_filter('nav_menu_css_class' , 'special_nav_class' , 10 , 2);
 
+add_action('wp_enqueue_scripts', 'add_scripts'); // приклеем ф-ю на добавление скриптов в футер
+if (!function_exists('add_scripts')) { // если ф-я уже есть в дочерней теме - нам не надо её определять
+    function add_scripts() { // добавление скриптов
+        if(is_admin()) return false; // если мы в админке - ничего не делаем
+        wp_deregister_script('jquery'); // выключаем стандартный jquery
+        wp_enqueue_script('jquery','//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js','','',false); // добавляем свой
+    }
+}
+
 function special_nav_class ($classes, $item) {
     if (in_array('current-menu-item', $classes) ){
     if (!in_array('menu-item-type-custom', $classes)) {
