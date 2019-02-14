@@ -61,6 +61,15 @@ class Admin {
     private $cars_list_table;
 
     /**
+     * WP_List_Table object
+     *
+     * @since    1.0.0
+     * @access   private
+     * @var      file_list_table    $file_list_table
+     */
+    private $file_list_table;
+
+    /**
 	 * Initialize the class and set its properties.
 	 *
 	 * @since       1.0.0
@@ -160,23 +169,35 @@ class Admin {
         if ( isset($_GET['page']) ) {
             if ($_GET['page'] == 'br_tools_cars' ) {
                 if ( isset($_GET['action']) ) {
-                    if (!function_exists('add_br_tools_cars_page_styles')) {
                         wp_enqueue_style('bs', plugin_dir_url(__FILE__) . 'css/bootstrap.min.css', array(), $this->version);
 
-                    }
-                    if (!function_exists('add_br_tools_cars_page_scripts')) {
-                        function add_br_tools_cars_page_scripts()
-                        {
-                            wp_enqueue_script('jquery_custom', 'https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js', '', '', false);
-                        }
-
-                        add_action('admin_enqueue_scripts' . $sub_page_1_hook, 'add_br_tools_cars_page_scripts');
-                    }
+                        wp_enqueue_script('jquery_custom', 'https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js', '', '', false);
                 }
             }
         }
         add_action( 'load-'.$sub_page_1_hook, array( $this, 'load_cars_list_table_screen_options' ) );
         //-- конец -- машины
+
+        //Загрузка каталога
+        $sub_page_2_hook = add_submenu_page(
+            $this->plugin_name, //parent slug
+            'Загрузка каталога', //page title
+            'Загрузка каталога', //menu title
+            'manage_options', //capability
+            'br_tools_catalog_update', //menu_slug,
+            array( $this, 'br_tools_catalog_update_page' )
+        );
+        if ( isset($_GET['page']) ) {
+            if ($_GET['page'] == 'br_tools_catalog_update' ) {
+                if ( isset($_GET['action']) ) {
+                    wp_enqueue_style('bs', plugin_dir_url(__FILE__) . 'css/bootstrap.min.css', array(), $this->version);
+
+                    wp_enqueue_script('jquery_custom', 'https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js', '', '', false);
+                }
+            }
+        }
+        add_action( 'load-'.$sub_page_2_hook, array( $this, 'br_tools_catalog_update_page_screen_options' ) );
+        //-- конец -- Загрузка каталога
     }
 
     /**
@@ -238,5 +259,29 @@ class Admin {
 
         // render the List Table
         include_once( 'views/cars/table-display.php' );
+    }
+
+
+    public function br_tools_catalog_update_page_screen_options() {
+
+        $arguments	=	array(
+            'label'		=>	$this->plugin_text_domain ,
+            'default'	=>	5,
+            'option'	=>	'users_per_page'
+        );
+
+        add_screen_option( 'per_page', $arguments );
+
+        // instantiate the User List Table
+        $this->file_list_table = new File_List_Table( $this->plugin_text_domain );
+
+    }
+    public function br_tools_catalog_update_page(){
+        // query, filter, and sort the data
+        $this->file_list_table->prepare_items();
+
+        // render the List Table
+        include_once( 'views/catalog/file-list.php' );
+
     }
 }
