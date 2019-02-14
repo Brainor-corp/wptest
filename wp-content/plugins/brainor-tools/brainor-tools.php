@@ -13,6 +13,7 @@ function br_tools_load(){
  
     if(is_admin()) // подключаем файлы администратора, только если он авторизован
         require_once(BR_TOOLS_DIR.'includes/admin/menu.php');
+        require_once(BR_TOOLS_DIR.'includes/admin/adminTableClass.php');
     add_action('admin_enqueue_scripts', 'add_br_tools_scripts'); // приклеем ф-ю на добавление скриптов в футер
     if (!function_exists('add_br_tools_scripts')) { // если ф-я уже есть в дочерней теме - нам не надо её определять
         function add_br_tools_scripts() { // добавление скриптов

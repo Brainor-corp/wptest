@@ -25,7 +25,7 @@ add_action('admin_menu', function(){
         }
     }
     //Страница Элементов гаданий
-    $page = add_submenu_page( 'br_divination_list', 'Элементы гаданий', 'Элементы гаданий', 'manage_categories', 'br_tools_cars', 'br_tools_cars_page' );
+    $page = add_submenu_page( 'br_tools_goods', 'Машины', 'Машины', 'manage_categories', 'br_tools_cars', 'br_tools_cars_page' );
     if ( isset($_GET['page']) ) {
         if ($_GET['page'] == 'br_tools_cars' ) {
             if (!function_exists('add_br_tools_cars_page_styles')) { // если ф-я уже есть в дочерней теме - нам не надо её определять
