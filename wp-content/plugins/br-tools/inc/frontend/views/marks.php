@@ -1,27 +1,3 @@
-
-
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-
-<script>
-    if(!document.getElementById('br-tools-general-css')) {
-        let style = document.createElement( 'link' );
-        style.setAttribute('id', 'br-tools-general-css');
-        style.setAttribute('rel', 'stylesheet');
-        style.setAttribute('type', 'text/css');
-        style.setAttribute('href', '/wp-content/plugins/br-tools/inc/frontend/css/br-tools-general.css');
-
-        document.getElementsByTagName( 'head' )[ 0 ].appendChild(style);
-    }
-
-    if(!document.getElementById('br-tools-general-js')) {
-        let script = document.createElement( 'script' );
-        script.src = '/wp-content/plugins/br-tools/inc/frontend/js/br-tools-general.js';
-        script.id = 'br-tools-general-js';
-        script.type = 'text/javascript';
-        document.getElementsByTagName( 'head' )[ 0 ].appendChild(script);
-    }
-</script>
-
 <?php
     global $wpdb;
     $carsTable = 'wp_br_tools_cars';
