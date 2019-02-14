@@ -1,5 +1,4 @@
 $(document).ready(function () {
-    console.log('hello there!');
 
     function openTab(evt, tabName) {
         var i, tabcontent, tablinks;
