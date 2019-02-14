@@ -8,14 +8,14 @@
         style.setAttribute('id', 'br-tools-general-css');
         style.setAttribute('rel', 'stylesheet');
         style.setAttribute('type', 'text/css');
-        style.setAttribute('href', '/wp-content/plugins/brainor-tools/assets/css/br-tools-general.css');
+        style.setAttribute('href', '/wp-content/plugins/br-tools/inc/frontend/css/br-tools-general.css');
 
         document.getElementsByTagName( 'head' )[ 0 ].appendChild(style);
     }
 
     if(!document.getElementById('br-tools-general-js')) {
         let script = document.createElement( 'script' );
-        script.src = '/wp-content/plugins/brainor-tools/assets/js/br-tools-general.js';
+        script.src = '/wp-content/plugins/br-tools/inc/frontend/js/br-tools-general.js';
         script.id = 'br-tools-general-js';
         script.type = 'text/javascript';
         document.getElementsByTagName( 'head' )[ 0 ].appendChild(script);
