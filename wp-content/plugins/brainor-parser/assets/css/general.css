@@ -1,0 +1,43 @@
+.receipt-content .receipt-thumb{
+    max-height: 300px;
+    overflow: hidden;
+}
+.receipt-content .receipt-thumb img{
+    width: 100%;
+    height: auto;
+}
+.receipt-content .wrapper-title{
+    display: block;
+    padding-bottom: 10px;
+    font-weight: 600;
+    color: #3c3c3c;
+}
+.receipt-content .energy-item{
+    font-weight: 600;
+    color: #3c3c3c;
+}
+.receipt-content .energy-wrapper{
+    width: 50%;
+    padding: 15px;
+    float: left;
+}
+.receipt-content .energy-item span{
+    font-weight: 400;
+    color: #3c3c3c;
+}
+
+.receipt-content .composition-wrapper{
+    width: 50%;
+    padding: 15px;
+    float: left;
+}
+.receipt-content .composition-item-name{
+    float: left;
+    font-weight: 600;
+    color: #3c3c3c;
+}
+.receipt-content .composition-item-value{
+    float: left;
+    font-weight: 400;
+    color: #3c3c3c;
+}

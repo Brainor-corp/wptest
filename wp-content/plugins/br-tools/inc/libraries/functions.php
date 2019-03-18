@@ -42,8 +42,12 @@ function br_tools_get_car_models() {
     global $wpdb;
 
     $carsTable = 'wp_br_tools_cars';
+    $pivotTable = 'wp_br_tools_car_good';
     $query = $wpdb->prepare(
-        "SELECT model, modification, id FROM $carsTable where $carsTable.brand = %s GROUP BY(model)",
+        "SELECT model, modification, id FROM $carsTable 
+                  where $carsTable.brand = %s 
+                  AND exists (select car_id from $pivotTable where car_id = $carsTable.id)
+                  GROUP BY(model)",
         $_POST['mark']
     );
 
@@ -108,7 +112,7 @@ function showProducts($goods) {
                         <span> Город: <strong>' . get_city_name($good->city) . '</strong></span>
                     </div>
                     <div>
-                        <span> Цена: <strong>' . $good->price . ' руб. </strong> </span>
+                        <span> Цена: <strong>' . number_format ($good->price, 0, '.', ' ') . ' руб. </strong> </span>
                     </div>
                     <div>
                         <span> <a data-fancybox="" data-src="#hidden-content" href="javascript:;" class="btn br-tools-modal-btn">Оставить заявку</a> </span>

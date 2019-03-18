@@ -1,13 +1,32 @@
 <?php
     global $wpdb;
     $carsTable = 'wp_br_tools_cars';
+    $pivotTable = 'wp_br_tools_car_good';
 
-    $cars = $wpdb->get_results('
-        SELECT DISTINCT(brand) FROM ' . $carsTable . '
-    ', OBJECT);
+    $cars = $wpdb->get_results("
+        SELECT id FROM $carsTable  
+        GROUP BY brand
+    ", ARRAY_N);
+
+    function flatten(array $array) {
+        $return = array();
+        array_walk_recursive($array, function($a) use (&$return) { $return[] = $a; });
+        return $return;
+    }
+    $cars = flatten($cars);
+
+    $carsIds = implode(",",$cars);
+    $cars = $wpdb->get_results("
+        SELECT DISTINCT (brand) FROM $carsTable
+        WHERE 
+        id IN ($carsIds)
+        AND exists (select car_id from $pivotTable where car_id = $carsTable.id)
+        ORDER BY brand
+    ", OBJECT);
 ?>
 
 <div class="br-tools">
+    <h1>Рулевые рейки</h1>
     <input type="hidden" name="br-wp-admin-ajax-url" value="<?php echo admin_url('admin-ajax.php'); ?>">
 
     <div class="tab">
@@ -18,7 +37,7 @@
     <div id="br-tools-params-tab" class="tabcontent row br-tools-mx-0 active">
         <!--  Список марок авто -->
         <div class="col-xs-12">
-            <strong>Марка</strong>
+            <strong>Марка авто</strong>
         </div>
         <div class="br-marks col-xs-12">
             <div class="row">
@@ -33,10 +52,10 @@
 
         <!--  Список моделей авто (подгружается аяксом при выборе марки) -->
         <div class="col-xs-12 br-tools-mt-10">
-            <strong>Модели</strong>
+            <strong>Модели авто</strong>
         </div>
         <div class="br-models col-xs-12">
-            <small>Выберите марку</small>
+            <small>Выберите марку авто</small>
         </div>
     </div>
 
@@ -44,11 +63,11 @@
         <div class="br-search-block">
             <form action="" id="br-search-form" class="br-search-form">
                 <div class="br-form-group">
-                    <label for="br-search-name">Название</label>
+                    <label for="br-search-name">Название детали</label>
                     <input type="text" class="br-tools-input" id="br-search-name" name="name">
                 </div>
                 <div class="br-form-group">
-                    <label for="br-search-code">Код</label>
+                    <label for="br-search-code">Код детали</label>
                     <input type="text" class="br-tools-input" id="br-search-code" name="code">
                 </div>
                 <button type="submit" class="br-tools-search">Показать</button>

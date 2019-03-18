@@ -1,0 +1,20 @@
+.sortable{
+    list-style: none;
+    min-width: 100%;
+    min-height: 10px;
+}
+.sortable li{
+   /*border: none;*/
+   background: none;
+    padding:5px;
+}
+.ui-state-highlight {
+    border: 2px dotted steelblue !important;
+}
+.sortable .sortable-li-text{
+    margin: 3px 0;
+    border: 1px solid #c5c5c5;
+    background: #f6f6f6;
+    display: block;
+    padding: 5px 10px
+}
