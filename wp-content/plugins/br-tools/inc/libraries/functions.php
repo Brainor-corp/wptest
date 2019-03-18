@@ -44,7 +44,7 @@ function br_tools_get_car_models() {
     $carsTable = 'wp_br_tools_cars';
     $pivotTable = 'wp_br_tools_car_good';
     $query = $wpdb->prepare(
-        "SELECT model, modification, id FROM $carsTable 
+        "SELECT brand, model, modification, id FROM $carsTable 
                   where $carsTable.brand = %s 
                   AND exists (select car_id from $pivotTable where car_id = $carsTable.id)
                   GROUP BY(model)",
@@ -60,7 +60,7 @@ function br_tools_get_car_models() {
         $returnElements .= '
         <div class="br-model-point col-xs-12 col-sm-6 col-lg-3 br-tools-mb-5"> 
             <input type="checkbox" value="' . $model->id . '<||>'.$_POST['mark'].'<||>'.$model->model.'" id="br-model-' . $key . '" name="br-model" class="br-model-checkbox br-tools-input">
-            <label for="br-model-' . $key . '">' . $model->model . '</label>
+            <label for="br-model-' . $key . '">' . $model->brand . ' ' . $model->model . '</label>
         </div>
     ';
     endforeach;
