@@ -1,4 +1,4 @@
-$(document).ready(function () {
+jQuery(document).ready(function($) {
 
     function openTab(evt, tabName) {
         var i, tabcontent, tablinks;
